@@ -37,8 +37,12 @@ class Fetcher
             CURLOPT_TIMEOUT => $timeoutSeconds,
             CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
             CURLOPT_HTTPHEADER => $headers,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => 0,
+            
+            // SSL verification enabled with CA bundle
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_SSL_VERIFYHOST => 2,
+            CURLOPT_CAINFO => __DIR__ . '/../cacert.pem',
+            
             CURLOPT_ENCODING => ''
         ]);
         $response = curl_exec($ch);

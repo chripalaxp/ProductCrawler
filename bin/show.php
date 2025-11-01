@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 $baseDir = dirname(__DIR__);
 $dbPath = $baseDir . DIRECTORY_SEPARATOR . 'logs' . DIRECTORY_SEPARATOR . 'products.sqlite';

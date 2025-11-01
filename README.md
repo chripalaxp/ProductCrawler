@@ -19,7 +19,7 @@ The application follows a simple but clean architecture:
 
 ```
 src/
-├── Fetcher.php       # HTTP client with cURL (retry logic, headers, timeouts)
+├── Fetcher.php       # HTTP client with cURL (retry logic, headers, timeouts, SSL verification)
 ├── Parser.php        # HTML parsing with multiple CSS selector strategies
 ├── Repository.php    # SQLite database with upsert operations
 └── Logger.php        # File-based logging (errors, warnings)
@@ -33,6 +33,8 @@ library/
 logs/
 ├── products.sqlite   # Product data storage
 └── log.txt          # Application logs
+
+cacert.pem            # CA certificate bundle for SSL verification
 ```
 
 ### Key Components
@@ -42,6 +44,7 @@ logs/
 - Custom User-Agent to simulate browser requests
 - Proper timeout configuration (20 seconds)
 - HTTP redirect following
+- SSL certificate verification with CA bundle
 
 **Parser**: Extracts product data using CSS selectors with fallback strategies:
 - Multiple selector patterns per field (title, price, availability)
@@ -57,7 +60,16 @@ logs/
 - Warning logs for missing fields
 - Error logs for network or database failures
 
+## SSL Certificate
 
+The application uses HTTPS with proper SSL certificate verification for secure connections. The CA certificate bundle (`cacert.pem`) is included in the project root.
+
+**Source**: The certificate bundle is the official Mozilla CA Certificate Store from [curl.se/ca/cacert.pem](https://curl.se/ca/cacert.pem)
+
+This ensures:
+- Secure HTTPS connections
+- Protection against man-in-the-middle attacks
+- Proper SSL/TLS certificate validation
 
 ## Installation & Usage
 

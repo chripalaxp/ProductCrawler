@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 // Load HTML parser library
 $parserPath = __DIR__ . '/../library/simple_html_dom/simple_html_dom.php';
