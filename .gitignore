@@ -1,0 +1,9 @@
+logs/
+*.log
+
+*.sqlite
+*.db
+
+vendor/
+composer.lock
+

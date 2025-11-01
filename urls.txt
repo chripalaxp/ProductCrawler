@@ -1,0 +1,5 @@
+# Add one product URL per line. Lines starting with # are ignored.
+https://www.dioptra.gr/vivlia/paidika/xristougenna-stin-odo-selidodeikti-6
+https://www.psichogios.gr/el/quicksilver.html
+https://www.psichogios.gr/el/zito-epitrapezio-paixnidi-poso-ton-exeis-gia-14.html
+https://www.psichogios.gr/el/animal-planet-falainokarxarias-deluxe-i.html
